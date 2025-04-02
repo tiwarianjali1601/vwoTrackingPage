@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VWO Tracking Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <!-- 🔍 Paste your VWO SmartCode here -->
+  <!-- Example:
+  <script type="text/javascript" src="https://dev.visualwebsiteoptimizer.com/lib/ACCOUNT_ID.js"></script>
+  -->
+</head>
+<body>
+
+  <h1>Welcome to VWO Tracking Test Page</h1>
+  <p>Click the button below to test event tracking.</p>
+
+  <button id="trackBtn">Click Me!</button>
+
+  <script>
+    document.getElementById('trackBtn').addEventListener('click', function() {
+      alert("Button clicked! Tracking event should fire.");
+      // Example custom event tracking (replace 'button_clicked' with your event)
+      if (typeof _vwo_code !== 'undefined' && _vwo_code.event) {
+        _vwo_code.event('button_clicked');
+      }
+    });
+  </script>
+
+</body>
+</html>
